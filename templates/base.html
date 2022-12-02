@@ -6,36 +6,92 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <!-- Personal CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title> Cinemaniac | Move Review Blog </title>
 </head>
 
 <body>
-    <!-- Dark Mode Switch -->
-    <div class="theme-switch-wrapper">
-        <span id="toggle-icon">
-            <span class="toggle-text">Light Mode</span>
-            <i class="fas fa-sun"></i>
-        </span>
-        <label class="theme-switch">
-            <input type="checkbox">
-            <div class="slider round"></div>
-        </label>
-    </div>
     <!-- Navigation -->
-    <nav id="nav">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
-    <!-- Home Section -->
-    <section id="home">
-        <div class="title-group">
-            <h1>Light/Dark Mode</h1>
-            <h2>Project by FullstackSammy</h2>
+    <nav class="navbar navbar-expand-lg bg-secondary">
+        <a class="navbar-brand gradient-text" href="#">Cinemaniac</a>
+        <button class="navbar-toggler background-gradient" type="button" data-toggle="collapse"
+            data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active gradient-text" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link gradient-text" href="#">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+            <span class="navbar-text text-muted gradient-text">
+                Film Reviews
+            </span>
         </div>
-    </section>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="title-group gradient-text">Best Film Reviews On The Internet</h1>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+    </main>
+
+    <!-- footer -->
+    <footer class="
+        footer
+        mt-5
+        fixed-bottom
+        position-relative
+        text-center
+      ">
+        <div class="p-2">
+            <div class="mb-1">
+                <a class="btn btn-light btn-floating shadow m-1 background-gradient" href="https://www.facebook.com/"
+                    role="button" target="_blank" aria-label="Facebook link"><i class="fab fa-facebook-f"></i></a>
+
+                <a class="btn btn-light shadow btn-floating m-1 background-gradient" href="https://twitter.com/"
+                    role="button" target="_blank" aria-label="Facebook link"><i class="fab fa-twitter"></i></a>
+
+                <a class="btn btn-light shadow btn-floating m-1 background-gradient"
+                    href="https://www.merriam-webster.com/dictionary/argument" role="button" target="_blank"
+                    aria-label="Facebook link"><i class="fas fa-book-open"></i></a>
+
+                <a class="btn bg-light shadow btn-floating m-1 background-gradient" href="https://www.instagram.com/"
+                    role="button" target="_blank" aria-label="Facebook link"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
+</body>
