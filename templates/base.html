@@ -12,6 +12,7 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- Personal CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title> Cinemaniac | Move Review Blog </title>
@@ -19,11 +20,11 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary">
+    <nav class="nav navbar navbar-expand-lg fixed-top position-sticky">
         <a class="navbar-brand gradient-text" href="#">Cinemaniac</a>
         <button class="navbar-toggler background-gradient" type="button" data-toggle="collapse"
             data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon text-white"></span>
+            <i class="fa-solid fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
@@ -49,13 +50,6 @@
         </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="title-group gradient-text">Best Film Reviews On The Internet</h1>
-            </div>
-        </div>
-    </div>
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
@@ -68,8 +62,8 @@
         footer
         mt-5
         fixed-bottom
-        position-relative
         text-center
+        position-relative
       ">
         <div class="p-2">
             <div class="mb-1">
