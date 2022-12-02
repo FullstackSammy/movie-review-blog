@@ -54,15 +54,17 @@ h2 {
 .navbar-brand {
   font-size: 40px;
   font-weight: bold;
+  filter: brightness(200%);
 }
 
 .nav-item, .navbar-text {
   font-size: 20px;
   font-weight: bold;
+  filter: brightness(200%);
 }
 
 .nav-item:hover {
-  filter: brightness(150%) !important;
+  filter: brightness(250%) !important;
 }
 
 .card-title:hover {
