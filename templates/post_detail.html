@@ -65,8 +65,8 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4 mt-3">
-            <div class="card-body">
+        <div class="col-md-4 card mb-4 mt-3 background-gradient">
+            <div class="card-body ">
                 <!-- For later -->
                 {% if user.is_authenticated %}
 
@@ -75,8 +75,10 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg"></button>
+                    <button type="submit" class="btn btn-signup btn-lg background-gradient">Comment</button>
                 </form>
+                {% else %}
+                <h4><a class="link" href="{% url 'account_login' %}">Sign in</a> or <a class="link" href="{% url 'account_signup' %}">Register</a> to leave a comment!</h4>
                 {% endif %}
             </div>
         </div>
