@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
 
 {% block title-group %}
 {% endblock %}
@@ -30,7 +30,8 @@
                 </p>
                 <div class="row">
                     <div class="col-1">
-                        <strong class="text-white"><i class="far fa-heart text-white"></i> {{ post.number_of_likes }} </strong>
+                        <strong class="text-white"><i class="far fa-heart text-white"></i> {{ post.number_of_likes }}
+                        </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -64,9 +65,19 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4 mt-3 background-gradient">
+        <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
                 <!-- For later -->
+                {% if user.is_authenticated %}
+
+                <h3>Leave a comment to let us know what you think!</h3>
+                <p>Commenting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg"></button>
+                </form>
+                {% endif %}
             </div>
         </div>
     </div>
