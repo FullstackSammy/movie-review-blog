@@ -107,6 +107,7 @@ h4 {
   background-image: linear-gradient(-90deg, #d38312, #a83279);
   color: black !important;
   border-radius: 3px;
+  padding: 3px;
 }
 
 .link:hover {
@@ -115,4 +116,17 @@ h4 {
 
 .login, .signup {
   padding: 10px;
+}
+
+/* buttons and fonts */
+
+.btn-like {
+  background-image: linear-gradient(-90deg, #d38312, #a83279) !important;
+  color: white !important;
+  border: 1px solid #2b1d2c !important;
+  margin-right: 5px !important;
+}
+
+.heart {
+  color: red !important;
 }
