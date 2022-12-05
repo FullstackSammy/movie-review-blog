@@ -18,6 +18,8 @@
   font-family: "Gudea", sans-serif;
 }
 
+/* Elements */
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -46,6 +48,10 @@ h4 {
   margin-top: 5px;
 }
 
+img {
+  border-radius: 5px !important;
+}
+
 /* Navigation */
 .fa {
   color: #2b1d2c;
@@ -65,7 +71,8 @@ h4 {
 .nav-item, .navbar-text {
   font-size: 20px;
   font-weight: bold;
-  filter: brightness(200%);
+  filter: brightness(150%);
+  margin-top: 5px;
 }
 
 .nav-item:hover {
@@ -73,7 +80,7 @@ h4 {
 }
 
 .card-title:hover {
-  color: white !important;
+  color: #2b1d2c !important;
 }
 
 .post-link {
@@ -86,16 +93,15 @@ h4 {
 }
 
 /* Home Section */
-.title-group {
+.title {
   text-align: center;
   margin-top: 10px;
   font-weight: bold;
   filter: brightness(200%);
-  text-shadow: -1px 2px 5px -webkit-linear-gradient(-60deg, #a83279, #d38312);;
+  text-shadow: -1px 2px 5px -webkit-linear-gradient(-60deg, #a83279, #d38312);
 }
 
 .card {
-  margin: 15px;
   border-radius: 5px;
 }
 
@@ -138,4 +144,8 @@ h4 {
 .alert {
   text-align: center;
   font-size: 20px;
+}
+
+.detail-img {
+  margin: 10px 0 0 15px;
 }

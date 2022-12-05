@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
@@ -53,7 +54,12 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Your comment was succesfully posted!',
+            )
+            return HttpResponseRedirect(request.path_info)
         else:
             comment_form = CommentForm()
 
@@ -65,7 +71,7 @@ class PostDetail(View):
                 'comments': comments,
                 'commented': True,
                 'liked': liked,
-                'comment_form': CommentForm()
+                'comment_form': CommentForm(),
             }
         )
 
