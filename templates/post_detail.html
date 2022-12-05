@@ -43,7 +43,7 @@
                                 {% else %}
 
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
-                                    <i class="far fa-heart"></i>
+                                    <i class="far fa-heart" style="color: #2b1d2c;"></i>
                                 </button>
 
                                 {% endif %}
@@ -52,12 +52,12 @@
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                            <span class="text-white">{{ post.number_of_likes }}</span>
+                            <span style="color: #2b1d2c;">{{ post.number_of_likes }}</span>
                         </strong>
                     </div>
-                    <div class="col-1">
+                    <div class="col-1 comment-div">
                         {% with comments.count as total_comments %}
-                        <strong class="text-white"><i class="far fa-comments"></i>
+                        <strong style="color: #2b1d2c;"><i class="far fa-comments"></i>
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
