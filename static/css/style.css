@@ -149,3 +149,9 @@ img {
 .detail-img {
   margin: 10px 0 0 15px;
 }
+
+.comment-date {
+  color: #2b1d2c;
+  filter: brightness(20%);
+  font-size: 15px;
+}
