@@ -101,7 +101,7 @@ img {
   border-radius: 5px;
 }
 
-.card-text, .card-title {
+.card-title {
   color: whitesmoke !important;
 }
 
@@ -150,7 +150,7 @@ img {
   margin: 10px 0 0 15px;
 }
 
-.comment-date {
+.comment-date, .card-text {
   color: #2b1d2c;
   filter: brightness(20%);
   font-size: 15px;
