@@ -79,10 +79,6 @@ img {
   filter: brightness(250%) !important;
 }
 
-.card-title:hover {
-  color: #2b1d2c !important;
-}
-
 .post-link {
   text-decoration: none !important;
 }
@@ -105,8 +101,12 @@ img {
   border-radius: 5px;
 }
 
-.card-text {
+.card-text, .card-title {
   color: whitesmoke !important;
+}
+
+.card-title:hover {
+  color: #2b1d2c !important;
 }
 
 .link {
@@ -117,7 +117,7 @@ img {
 }
 
 .link:hover {
-  color: #2b1d2c !important;
+  color: whitesmoke !important;
 }
 
 .login, .signup {
