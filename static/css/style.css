@@ -68,7 +68,7 @@ img {
   filter: brightness(200%);
 }
 
-.nav-item, .navbar-text {
+.nav-item {
   font-size: 20px;
   font-weight: bold;
   filter: brightness(150%);

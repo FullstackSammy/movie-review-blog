@@ -16,5 +16,5 @@ urlpatterns = [
         name="edit_comment",
     ),
     path(
-        'suggestions', views.Suggestions.as_view(), name='movie_suggestions'),
+        'contact', views.Suggestions.as_view(), name='movie_suggestions'),
 ]

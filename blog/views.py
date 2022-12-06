@@ -141,4 +141,5 @@ class PostLike(View):
 
 
 class Suggestions(TemplateView):
+
     template_name = "movie_suggestions.html"

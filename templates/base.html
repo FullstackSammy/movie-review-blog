@@ -46,8 +46,8 @@
                 </li>
                 {% endif %}
             </ul>
-            <span class="navbar-text gradient-text">
-                <a class="nav-item gradient-text" href="{% url 'movie_suggestions' %}"> Leave Suggestions</a>
+            <span class="gradient-text">
+                <a class="nav-item gradient-text" href="{% url 'movie_suggestions' %}"> For Movie Night</a>
             </span>
         </div>
         </div>
@@ -105,9 +105,17 @@
     </script>
     <script>
         setTimeout(function () {
-            let messages = document.getElementById('msg');
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 3000);
+        let messages = document.getElementById('msg');
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 3000);
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script>
+        (function () {
+            emailjs.init("R6A6UlPYHLb2KXBMs");
+        })();
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
