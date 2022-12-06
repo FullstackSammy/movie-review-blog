@@ -6,19 +6,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 card mb-4 mt-3 background-gradient">
-            <h4>Comment:</h4>
+            <h4>Edit comment:</h4>
             <div class="card-body">
-                {% if user.username == comment.name %}
-                  <form method="post" style="margin-top: 1.3em;">
+                <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg background-gradient">Edit Comment</button>
-                  </form>
-                {% endif %}
-              </div>
-            </li>
-          </ul>
-          <hr />
+                    <button type="submit" class="btn btn-signup btn-lg background-gradient">Update Comment</button>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}

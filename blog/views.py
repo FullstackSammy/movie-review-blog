@@ -77,9 +77,10 @@ class PostDetail(View):
 
     def delete_own_comment(request, id=None):
         comment = get_object_or_404(Comment, id=id)
-        r = request.user
         if (
-            comment.name == r.username and r.is_authenticated
+            comment.name ==
+            request.user.username
+            and request.user.is_authenticated
         ):
             comment.delete()
             messages.add_message(
@@ -91,13 +92,14 @@ class PostDetail(View):
         else:
             messages.add_message(
                 request, messages.ERROR, 'An error has occured')
-    
+
     def edit_own_comment(request, id=None):
         comment = get_object_or_404(Comment, id=id)
-        if request.method =='POST':
-            r = request.user
+        if request.method == 'POST':
             if (
-                comment.name == r.username and r.is_authenticated
+                comment.name ==
+                request.user.username
+                and request.user.is_authenticated
             ):
                 form = CommentForm(data=request.POST)
                 if form.is_valid():
@@ -108,7 +110,8 @@ class PostDetail(View):
                         messages.SUCCESS,
                         'Your comment has been edited.'
                     )
-                    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+                    return HttpResponseRedirect(
+                        request.META.get('HTTP_REFERER'))
                 else:
                     messages.add_message(
                         request, messages.ERROR, 'An error has occured')
@@ -121,21 +124,6 @@ class PostDetail(View):
                 'comment_form': CommentForm(instance=comment)
             }
         )
-        # r = request.user
-        # if (
-        #     comment.name == r.username and r.is_authenticated
-        # ):
-        #     messages.add_message(
-        #         request,
-        #         messages.SUCCESS,
-        #         'Your comment has been edited.'
-        #     )
-        #     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-        # else:
-        #     messages.add_message(
-        #         request, messages.ERROR, 'An error has occured')
-
-
 
 
 class PostLike(View):
