@@ -1,4 +1,4 @@
-from .import views
+from . import views
 from django.urls import path
 
 urlpatterns = [
@@ -15,4 +15,6 @@ urlpatterns = [
         views.PostDetail.edit_own_comment,
         name="edit_comment",
     ),
+    path(
+        'suggestions', views.Suggestions.as_view(), name='movie_suggestions'),
 ]

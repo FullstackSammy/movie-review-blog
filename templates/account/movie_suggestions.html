@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2 text-white" style="filter: brightness(200%);">
+            <h3 class="login-reg-text gradient-text">Suggestions</h3>
+
+            <p class="login-reg-text">Do you want us to review a movie? Then plese fill out the form below!</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Which movies do you want us to Review?</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

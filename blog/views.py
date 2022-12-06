@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.views.generic.base import TemplateView
 from .models import Post, Comment
 from .forms import CommentForm
 
@@ -137,3 +138,7 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class Suggestions(TemplateView):
+    template_name = "movie_suggestions.html"
