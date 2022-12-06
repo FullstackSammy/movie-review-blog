@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
 
 
@@ -74,6 +74,68 @@ class PostDetail(View):
                 'comment_form': CommentForm(),
             }
         )
+
+    def delete_own_comment(request, id=None):
+        comment = get_object_or_404(Comment, id=id)
+        r = request.user
+        if (
+            comment.name == r.username and r.is_authenticated
+        ):
+            comment.delete()
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Your comment has been deleted.'
+            )
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        else:
+            messages.add_message(
+                request, messages.ERROR, 'An error has occured')
+    
+    def edit_own_comment(request, id=None):
+        comment = get_object_or_404(Comment, id=id)
+        if request.method =='POST':
+            r = request.user
+            if (
+                comment.name == r.username and r.is_authenticated
+            ):
+                form = CommentForm(data=request.POST)
+                if form.is_valid():
+                    comment.body = form.cleaned_data['body']
+                    comment.save()
+                    messages.add_message(
+                        request,
+                        messages.SUCCESS,
+                        'Your comment has been edited.'
+                    )
+                    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+                else:
+                    messages.add_message(
+                        request, messages.ERROR, 'An error has occured')
+
+        return render(
+            request,
+            "edit_comment.html",
+            {
+                'comment': comment,
+                'comment_form': CommentForm(instance=comment)
+            }
+        )
+        # r = request.user
+        # if (
+        #     comment.name == r.username and r.is_authenticated
+        # ):
+        #     messages.add_message(
+        #         request,
+        #         messages.SUCCESS,
+        #         'Your comment has been edited.'
+        #     )
+        #     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        # else:
+        #     messages.add_message(
+        #         request, messages.ERROR, 'An error has occured')
+
+
 
 
 class PostLike(View):

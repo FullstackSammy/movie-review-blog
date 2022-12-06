@@ -150,6 +150,10 @@ img {
   margin: 10px 0 0 15px;
 }
 
+.edit-btn {
+  
+}
+
 .comment-date, .card-text {
   color: #2b1d2c;
   filter: brightness(20%);
