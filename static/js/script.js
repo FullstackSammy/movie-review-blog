@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Constants //
     const contactBtn = document.getElementById('contact-btn');
 
+    /***
+     * Eventlistener that sends an email template to the user when the submit button is clicked
+     */
     contactBtn.addEventListener("click", () => {
         const email = document.getElementById("exampleFormControlInput1").value;
         let templateParams = {

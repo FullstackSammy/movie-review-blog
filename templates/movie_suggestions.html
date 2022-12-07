@@ -1,17 +1,17 @@
 {% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %}
 
 {% block content %}
-
+<!-- Titel for page -->
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2 text-white" style="filter: brightness(200%);">
       <h3 class="login-reg-text gradient-text">Movie Night</h3>
-
       <p class="login-reg-text">Wanna watch some good movies? Then please fill out the form below and we'll send you our top suggestions!</p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2 background-gradient" style="padding: 10px;">
+      <!-- will only show if user is logged in -->
       {% if user.is_authenticated %}
       <form>
         {% csrf_token %}
@@ -23,6 +23,7 @@
         </div>
       </form>
       {% else %}
+      <!-- will only show if user is not logged in -->
       <h4 style="text-align: center;"><a class="link" href="{% url 'account_login' %}">Sign in</a> or <a class="link"
           href="{% url 'account_signup' %}">Register</a> to sign up for Movie Night!</h4>
       {% endif %}
