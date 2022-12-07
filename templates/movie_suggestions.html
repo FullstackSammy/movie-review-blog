@@ -17,7 +17,7 @@
         {% csrf_token %}
         <div class="form-group">
           <label for="exampleFormControlInput1">Email address</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
           <button id="contact-btn" class="btn btn-signup right background-gradient" type="submit" style="margin-top: 10px; border: 1px solid #2b1d2c">Submit</button>
           <button class="btn btn-signup right background-gradient" style="margin-top: 10px; border: 1px solid #2b1d2c"><a href="{% url 'home' %}" class="edit-btn">Go back</a></button>
         </div>
