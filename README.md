@@ -257,7 +257,7 @@ Unfixed:
 
 ## Deployment
 
-The site was deployed using Heroku, following the steps offered by Codeinstitute. Instructions are found [here](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+The site was deployed using Heroku, following the steps offered by Codeinstitute.
 
 Heroku:
 
@@ -265,7 +265,7 @@ Create an account with Heroku
 Create a new app whilst logged in
 Add Buildpacks 'Python' and 'NodeJS'
 Connect your GitHub repository via "Connect to GitHub"
-Set up your config vars (info in doc above)
+Set up your config vars.
 Enable either "Automatic Deploys" or do it manually.
 Using Cloudinary and how to set it up can be read here, as well as in the above document. [here](https://devcenter.heroku.com/articles/cloudinary)
 
