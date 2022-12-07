@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+<!-- Masthead for the view -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -20,7 +20,7 @@
         </div>
     </div>
 </div>
-
+<!-- div containing the content of the post -->
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left top background-gradient">
@@ -31,6 +31,7 @@
                 <div class="row">
                     <div class="col-1">
                         <strong>
+                            <!-- If user is authenticated, it will show if liked or not -->
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="post">
                                 {% csrf_token %}
