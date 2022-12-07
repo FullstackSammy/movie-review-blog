@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'ALLOWALL'
 
 ALLOWED_HOSTS = ['cinemaniac-blog.herokuapp.com', 'localhost']
 
