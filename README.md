@@ -242,8 +242,6 @@ Unfixed:
 
 - PostgreSQL Database
 
-- SQlite has been used for local testing
-
 - Pep8 has been used for formatting and error-checking python-code
 
 - JavaScript for the Email form
@@ -261,13 +259,13 @@ The site was deployed using Heroku, following the steps offered by Codeinstitute
 
 Heroku:
 
-Create an account with Heroku
-Create a new app whilst logged in
-Add Buildpacks 'Python' and 'NodeJS'
-Connect your GitHub repository via "Connect to GitHub"
-Set up your config vars.
-Enable either "Automatic Deploys" or do it manually.
-Using Cloudinary and how to set it up can be read here, as well as in the above document. [here](https://devcenter.heroku.com/articles/cloudinary)
+- Create an account with Heroku
+- Create a new app whilst logged in
+- Add Buildpacks 'Python' and 'NodeJS'
+- Connect your GitHub repository via "Connect to GitHub"
+- Set up your config vars.
+- Enable either "Automatic Deploys" or do it manually.
+- Using Cloudinary and how to set it up can be read here, as well as in the above document. [here](https://devcenter.heroku.com/articles/cloudinary)
 
 ## Credits
 
