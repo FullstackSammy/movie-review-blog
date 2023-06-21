@@ -1,6 +1,6 @@
 # Cinemaniac Film Reviews | Portfolio Project 4 Full-Stack Toolkit
 
-[Live Site](https://cinemaniac-blog.herokuapp.com/)
+[Live Site](https://fullstacksammy-movie-blog.onrender.com)
 
 Cinemaniac is a movie review blog, for the movie lovers out there. Users come to read the reviews, create their accounts and join the community.
 Come in and enjoy top-notch reviews of your favourite movies, drop a like or join a discussion about a movie or two.
