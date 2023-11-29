@@ -1,5 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -112,7 +111,8 @@ class PostDetail(View):
                         messages.SUCCESS,
                         'Your comment has been edited.'
                     )
-                    return redirect(reverse('post_detail'))
+                    return HttpResponseRedirect(
+                        request.META.get('HTTP_REFERER'))
                 else:
                     messages.add_message(
                         request, messages.ERROR, 'An error has occured')
